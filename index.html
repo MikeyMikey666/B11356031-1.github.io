@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>商品展示</title>
+  <style>
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 2em;
+      text-align: center;
+      background-color: white;
+      max-width: 800px;
+      margin: 2em auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showProduct('product1')">商品 1</a>
+    <a onclick="showProduct('product2')">商品 2</a>
+    <a onclick="showProduct('product3')">商品 3</a>
+  </nav>
+
+  <main>
+    <div id="product1" class="product active">
+      <h1>商品 1 - 高級原子筆</h1>
+      <p>這是一支質感極佳的原子筆，書寫順暢，適合辦公及日常使用。</p>
+      <img src="https://888ezgo.com.tw/image/product/9803/010205953b1.jpg" alt="商品 1">
+      <p>價格：NT$150</p>
+    </div>
+
+    <div id="product2" class="product">
+      <h1>商品 2 - 精美筆記本</h1>
+      <p>封面設計時尚，內頁使用優質紙張，適合書寫與繪圖。</p>
+      <img src="https://tshop.r10s.com/9bb/59c/fab3/b94e/4003/5acf/93b6/111ae8869f2c600c737442.jpg?_ex=486x486" alt="商品 2">
+      <p>價格：NT$250</p>
+    </div>
+
+    <div id="product3" class="product">
+      <h1>商品 3 - 時尚背包</h1>
+      <p>結合設計與實用性的背包，適合上學、上班與旅行使用。</p>
+      <img src="https://curation.culture.tw/api/pic?id=User06521c0ca-2fb4-4380-8a28-2faf30a5b0d0&w=1000" alt="商品 3">
+      <p>價格：NT$980</p>
+    </div>
+  </main>
+
+  <script>
+    function showProduct(productId) {
+      const products = document.querySelectorAll('.product');
+      products.forEach(p => p.classList.remove('active'));
+      document.getElementById(productId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
